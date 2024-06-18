@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "native": "node server.js",
-    "start": "pm2 start server.js"
+    "start": "pm2 start --name 'wwk_backend' server.js"
   },
   "keywords": [],
   "author": "Xela Oladipupo",
@@ -28,3 +28,4 @@
     "socket.io": "^4.7.5"
   }
 }
+
