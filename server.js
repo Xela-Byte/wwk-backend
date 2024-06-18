@@ -14,15 +14,19 @@ const router = express.Router();
 
 const server = http.createServer(app);
 
+const frontURL = process.env.NODE_ENV
+  ? 'http://localhost:3000'
+  : 'https://wash-with-kings.vercel.app';
+
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: frontURL,
     methods: ['GET', 'POST'],
   },
 });
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: frontURL,
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
