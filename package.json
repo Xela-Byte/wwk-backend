@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "native": "node server.js",
-    "start": "pm2 start --name 'wwk_backend' server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "Xela Oladipupo",
