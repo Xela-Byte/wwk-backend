@@ -1,0 +1,39 @@
+Customer Model 
+Name
+Email
+Phone number
+Address
+Status (active / pending)
+
+Pickup Model extends Customer Model
+Pick-up date - typeof date
+Comment
+Status (completed / pending)
+
+Message Model
+Full Name
+Email
+Phone number
+Subject 
+MessageBody
+
+Admin Model
+Email
+Name
+Password
+
+Owner Model
+Email
+Name
+Password
+
+Notification Model
+Title 
+Message
+Type (order / message)
+OrderID?: orderID
+MessageID?: messageID
+read
+
+
+
