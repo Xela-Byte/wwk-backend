@@ -14,9 +14,10 @@ const router = express.Router();
 
 const server = http.createServer(app);
 
-const frontURL = process.env.NODE_ENV
-  ? 'http://localhost:3000'
-  : 'https://wash-with-kings.vercel.app';
+const frontURL =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : 'https://wash-with-kings.vercel.app';
 
 const io = new Server(server, {
   cors: {
