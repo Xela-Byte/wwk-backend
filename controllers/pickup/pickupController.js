@@ -11,37 +11,64 @@ exports.getAllPickups = async (req, res) => {
   let pickups;
   const limit = parseInt(req.query.limit, 10) || 5;
   const page = parseInt(req.query.page, 10) || 1;
+  const pickupStatus = req.query.status || 'completed';
+  const searchQuery = req.query.search || '';
 
   try {
     if (!limit) {
-      errorHandling(`400|Please provide limit|`);
+      return res
+        .status(400)
+        .json({ statusCode: 400, message: 'Please provide limit' });
     }
     if (!page) {
-      errorHandling(`400|Please provide page|`);
+      return res
+        .status(400)
+        .json({ statusCode: 400, message: 'Please provide page' });
     }
-    // Get the total number of customers
+
+    // Build the search criteria
+    const searchCriteria = searchQuery
+      ? {
+          $or: [
+            { fullName: { $regex: searchQuery, $options: 'i' } },
+            { email: { $regex: searchQuery, $options: 'i' } },
+            { phoneNumber: { $regex: searchQuery, $options: 'i' } },
+            { orderNumber: { $regex: searchQuery, $options: 'i' } },
+          ],
+        }
+      : {};
+
+    // Combine status filter with search criteria
+    const filterCriteria = {
+      status: pickupStatus,
+      ...searchCriteria,
+    };
+
+    // Get the total number of customers with the specified status and search criteria
+    const totalFilteredPickups = await Pickup.countDocuments(filterCriteria);
+
     const totalPickups = await Pickup.countDocuments();
 
     // Calculate the number of customers to skip
     const skip = (page - 1) * limit;
 
-    // Query to get the customers with pagination and sorting
-    pickups = await Pickup.find()
+    // Query to get the customers with pagination, sorting, and search
+    pickups = await Pickup.find(filterCriteria)
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limit);
 
     // Determine if there is a next page
-    const isNextPage = page * limit < totalPickups;
+    const isNextPage = page * limit < totalFilteredPickups;
 
-    const totalPages = Math.ceil(totalPickups / limit);
+    const totalPages = Math.ceil(totalFilteredPickups / limit);
 
     // Return the paginated response
     return res.status(200).json({
       statusCode: 200,
       data: pickups,
       currentPage: page,
-      totalLength: totalPickups,
+      totalLength: searchQuery ? totalFilteredPickups : totalPickups,
       isNextPage: isNextPage,
       totalPages: totalPages,
     });

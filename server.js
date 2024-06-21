@@ -14,6 +14,7 @@ const router = express.Router();
 
 const server = http.createServer(app);
 
+// const frontURL = 'http://localhost:3000';
 const frontURL = 'https://wash-with-kings.vercel.app';
 
 const io = new Server(server, {
@@ -34,6 +35,22 @@ io.on('connection', async (socket) => {
   try {
     const notifications = await Notification.find().sort({ createdAt: -1 });
     socket.emit('notifications', notifications);
+
+    // Marks notification as read
+    socket.on('markNotificationAsRead', async (notificationId) => {
+      try {
+        const notification = await Notification.findById(notificationId);
+        if (notification) {
+          notification.read = true;
+          await notification.save();
+          console.log(`Notification ${notificationId} marked as read`);
+        } else {
+          console.log(`Notification ${notificationId} not found`);
+        }
+      } catch (error) {
+        console.error('Error marking notification as read:', error);
+      }
+    });
   } catch (error) {
     console.error('Error fetching notifications:', error);
   }

@@ -9,7 +9,7 @@ const welcomeEmailTemplate = () => {
             font-family: Nunito, sans-serif;
         }
         .header {
-            background-color: #E1510F;
+            background-color: #FDE198;
             padding: 20px;
             text-align: center;
         }
@@ -17,7 +17,7 @@ const welcomeEmailTemplate = () => {
             padding: 20px;
         }
         .footer {
-            background-color: #E1510F;
+            background-color: #FDE198;
             padding: 10px;
             text-align: center;
         }

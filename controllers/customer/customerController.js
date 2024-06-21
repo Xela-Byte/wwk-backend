@@ -8,38 +8,64 @@ exports.getAllCustomers = async (req, res) => {
   let customers;
   const limit = parseInt(req.query.limit, 10) || 5;
   const page = parseInt(req.query.page, 10) || 1;
+  const customerStatus = req.query.status || 'active';
+  const searchQuery = req.query.search || '';
 
   try {
     if (!limit) {
-      errorHandling(`400|Please provide limit|`);
+      return res
+        .status(400)
+        .json({ statusCode: 400, message: 'Please provide limit' });
     }
     if (!page) {
-      errorHandling(`400|Please provide page|`);
+      return res
+        .status(400)
+        .json({ statusCode: 400, message: 'Please provide page' });
     }
-    // Get the total number of customers
+
+    // Build the search criteria
+    const searchCriteria = searchQuery
+      ? {
+          $or: [
+            { fullName: { $regex: searchQuery, $options: 'i' } },
+            { email: { $regex: searchQuery, $options: 'i' } },
+            { phoneNumber: { $regex: searchQuery, $options: 'i' } },
+          ],
+        }
+      : {};
+
+    // Combine status filter with search criteria
+    const filterCriteria = {
+      status: customerStatus,
+      ...searchCriteria,
+    };
+
+    // Get the total number of customers with the specified status and search criteria
+    const totalFilteredCustomers =
+      await Customer.countDocuments(filterCriteria);
+
     const totalCustomers = await Customer.countDocuments();
 
     // Calculate the number of customers to skip
     const skip = (page - 1) * limit;
 
-    // Query to get the customers with pagination and sorting
-    customers = await Customer.find()
+    // Query to get the customers with pagination, sorting, and search
+    customers = await Customer.find(filterCriteria)
       .sort({ createdAt: -1 })
       .skip(skip)
-      .limit(limit)
-      .select('-password -token');
+      .limit(limit);
 
     // Determine if there is a next page
-    const isNextPage = page * limit < totalCustomers;
+    const isNextPage = page * limit < totalFilteredCustomers;
 
-    const totalPages = Math.ceil(totalCustomers / limit);
+    const totalPages = Math.ceil(totalFilteredCustomers / limit);
 
     // Return the paginated response
     return res.status(200).json({
       statusCode: 200,
       data: customers,
       currentPage: page,
-      totalLength: totalCustomers,
+      totalLength: searchQuery ? totalFilteredCustomers : totalCustomers,
       isNextPage: isNextPage,
       totalPages: totalPages,
     });

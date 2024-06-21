@@ -1,19 +1,14 @@
-const passwordResetTemplate = (name) => {
+const broadcastTemplate = (title, leaderName, role, message, link, image) => {
   const html = `
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html
-  dir="ltr"
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  lang="en"
->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="x-apple-disable-message-reformatting" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta content="telephone=no" name="format-detection" />
-    <title>New Template</title>
+    <title>Wash with Kings</title>
     <!--[if (mso 16)
       ]><style type="text/css">
         a {
@@ -358,6 +353,9 @@ const passwordResetTemplate = (name) => {
         .es-m-p40l {
           padding-left: 40px !important;
         }
+        button.es-button {
+          width: 100%;
+        }
         .es-desk-hidden {
           display: table-row !important;
           width: auto !important;
@@ -415,9 +413,9 @@ const passwordResetTemplate = (name) => {
         <tr>
           <td valign="top" style="padding: 0; margin: 0">
             <table
-              cellpadding="0"
-              cellspacing="0"
               class="es-content"
+              cellspacing="0"
+              cellpadding="0"
               align="center"
               role="none"
               style="
@@ -430,16 +428,9 @@ const passwordResetTemplate = (name) => {
               "
             >
               <tr>
-                <td
-                  class="es-info-area"
-                  align="center"
-                  style="padding: 0; margin: 0"
-                >
+                <td align="center" style="padding: 0; margin: 0">
                   <table
                     class="es-content-body"
-                    align="center"
-                    cellpadding="0"
-                    cellspacing="0"
                     style="
                       mso-table-lspace: 0pt;
                       mso-table-rspace: 0pt;
@@ -448,15 +439,18 @@ const passwordResetTemplate = (name) => {
                       background-color: transparent;
                       width: 600px;
                     "
+                    cellspacing="0"
+                    cellpadding="0"
                     bgcolor="#FFFFFF"
+                    align="center"
                     role="none"
                   >
                     <tr>
                       <td align="left" style="padding: 20px; margin: 0">
                         <table
-                          cellpadding="0"
-                          cellspacing="0"
                           width="100%"
+                          cellspacing="0"
+                          cellpadding="0"
                           role="none"
                           style="
                             mso-table-lspace: 0pt;
@@ -467,14 +461,14 @@ const passwordResetTemplate = (name) => {
                         >
                           <tr>
                             <td
-                              align="center"
                               valign="top"
+                              align="center"
                               style="padding: 0; margin: 0; width: 560px"
                             >
                               <table
-                                cellpadding="0"
-                                cellspacing="0"
                                 width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
                                 role="presentation"
                                 style="
                                   mso-table-lspace: 0pt;
@@ -485,8 +479,8 @@ const passwordResetTemplate = (name) => {
                               >
                                 <tr>
                                   <td
-                                    align="center"
                                     class="es-infoblock"
+                                    align="center"
                                     style="
                                       padding: 0;
                                       margin: 0;
@@ -508,19 +502,7 @@ const passwordResetTemplate = (name) => {
                                         font-size: 12px;
                                       "
                                     >
-                                      <a
-                                        target="_blank"
-                                        href=""
-                                        style="
-                                          -webkit-text-size-adjust: none;
-                                          -ms-text-size-adjust: none;
-                                          mso-line-height-rule: exactly;
-                                          text-decoration: underline;
-                                          color: #cccccc;
-                                          font-size: 12px;
-                                        "
-                                        >View online version</a
-                                      >
+                                      
                                     </p>
                                   </td>
                                 </tr>
@@ -535,9 +517,9 @@ const passwordResetTemplate = (name) => {
               </tr>
             </table>
             <table
-              cellpadding="0"
-              cellspacing="0"
               class="es-header"
+              cellspacing="0"
+              cellpadding="0"
               align="center"
               role="none"
               style="
@@ -555,11 +537,11 @@ const passwordResetTemplate = (name) => {
               <tr>
                 <td align="center" style="padding: 0; margin: 0">
                   <table
-                    bgcolor="#ffffff"
                     class="es-header-body"
-                    align="center"
-                    cellpadding="0"
                     cellspacing="0"
+                    cellpadding="0"
+                    bgcolor="#ffffff"
+                    align="center"
                     role="none"
                     style="
                       mso-table-lspace: 0pt;
@@ -571,11 +553,20 @@ const passwordResetTemplate = (name) => {
                     "
                   >
                     <tr>
-                      <td align="left" style="padding: 20px; margin: 0">
+                      <td
+                        align="left"
+                        style="
+                          margin: 0;
+                          padding-top: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 20px;
+                          padding-right: 20px;
+                        "
+                      >
                         <table
-                          cellpadding="0"
-                          cellspacing="0"
                           width="100%"
+                          cellspacing="0"
+                          cellpadding="0"
                           role="none"
                           style="
                             mso-table-lspace: 0pt;
@@ -584,7 +575,7 @@ const passwordResetTemplate = (name) => {
                             border-spacing: 0px;
                           "
                         >
-                          <tr class="es-mobile-hidden">
+                          <tr>
                             <td
                               class="es-m-p0r"
                               valign="top"
@@ -592,41 +583,42 @@ const passwordResetTemplate = (name) => {
                               style="padding: 0; margin: 0; width: 560px"
                             >
                               <table
-                                cellpadding="0"
-                                cellspacing="0"
                                 width="100%"
-                                bgcolor="#333333"
+                                cellspacing="0"
+                                cellpadding="0"
                                 style="
                                   mso-table-lspace: 0pt;
                                   mso-table-rspace: 0pt;
-                                  border-collapse: collapse;
+                                  border-collapse: separate;
                                   border-spacing: 0px;
-                                  background-color: #333333;
+                                  border-radius: 6px;
                                 "
                                 role="presentation"
                               >
-                                <tr>
+                                <tr class="es-mobile-hidden">
                                   <td
-                                    align="center"
                                     style="
                                       padding: 0;
                                       margin: 0;
+                                      padding-bottom: 20px;
                                       font-size: 0px;
                                     "
+                                    align="center"
                                   >
                                     <img
-                                      class="adapt-img"
-                                      src="https://fhdnyng.stripocdn.email/content/guids/CABINET_901434070b90d4308b3cb826bef9fb261cdee4cdfd86b233ef56859d8ab42551/images/logodesktop.png"
-                                      alt
+                                      src="https://fhdnyng.stripocdn.email/content/guids/CABINET_709144b816b8f4ca28b511223aa17e51257958dd19b9f49b37585c5c0eeaade5/images/logodesktop_zBL.png"
+                                      alt="Logo"
                                       style="
                                         display: block;
                                         border: 0;
                                         outline: none;
                                         text-decoration: none;
                                         -ms-interpolation-mode: bicubic;
+                                        font-size: 12px;
                                       "
-                                      width="100"
-                                      height="78"
+                                      title="Logo"
+                                      width="200"
+                                      height="156"
                                     />
                                   </td>
                                 </tr>
@@ -641,9 +633,9 @@ const passwordResetTemplate = (name) => {
               </tr>
             </table>
             <table
-              cellpadding="0"
-              cellspacing="0"
               class="es-content"
+              cellspacing="0"
+              cellpadding="0"
               align="center"
               role="none"
               style="
@@ -658,11 +650,11 @@ const passwordResetTemplate = (name) => {
               <tr>
                 <td align="center" style="padding: 0; margin: 0">
                   <table
-                    bgcolor="#ffffff"
                     class="es-content-body"
-                    align="center"
-                    cellpadding="0"
                     cellspacing="0"
+                    cellpadding="0"
+                    bgcolor="#ffffff"
+                    align="center"
                     role="none"
                     style="
                       mso-table-lspace: 0pt;
@@ -679,15 +671,15 @@ const passwordResetTemplate = (name) => {
                         style="
                           padding: 0;
                           margin: 0;
-                          padding-top: 15px;
+                          padding-top: 20px;
                           padding-left: 20px;
                           padding-right: 20px;
                         "
                       >
                         <table
-                          cellpadding="0"
-                          cellspacing="0"
                           width="100%"
+                          cellspacing="0"
+                          cellpadding="0"
                           role="none"
                           style="
                             mso-table-lspace: 0pt;
@@ -698,14 +690,13 @@ const passwordResetTemplate = (name) => {
                         >
                           <tr>
                             <td
-                              align="center"
-                              valign="top"
+                              align="left"
                               style="padding: 0; margin: 0; width: 560px"
                             >
                               <table
-                                cellpadding="0"
-                                cellspacing="0"
                                 width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
                                 role="presentation"
                                 style="
                                   mso-table-lspace: 0pt;
@@ -716,136 +707,29 @@ const passwordResetTemplate = (name) => {
                               >
                                 <tr>
                                   <td
-                                    align="center"
+                                    class="es-m-txt-c"
+                                    align="left"
                                     style="
                                       padding: 0;
                                       margin: 0;
-                                      padding-top: 10px;
                                       padding-bottom: 10px;
-                                      font-size: 0px;
+                                      padding-top: 20px;
                                     "
                                   >
-                                    <img
-                                      src="https://fhdnyng.stripocdn.email/content/guids/CABINET_91d375bbb7ce4a7f7b848a611a0368a7/images/69901618385469411.png"
-                                      alt
-                                      style="
-                                        display: block;
-                                        border: 0;
-                                        outline: none;
-                                        text-decoration: none;
-                                        -ms-interpolation-mode: bicubic;
-                                      "
-                                      width="100"
-                                      height="100"
-                                    />
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td
-                                    align="center"
-                                    class="es-m-p0r es-m-p0l es-m-txt-c"
-                                    style="
-                                      margin: 0;
-                                      padding-top: 15px;
-                                      padding-bottom: 15px;
-                                      padding-left: 40px;
-                                      padding-right: 40px;
-                                    "
-                                  >
-                                    <h2
+                                    <p
                                       style="
                                         margin: 0;
-                                        line-height: 31px;
+                                        -webkit-text-size-adjust: none;
+                                        -ms-text-size-adjust: none;
                                         mso-line-height-rule: exactly;
                                         font-family: arial, 'helvetica neue',
                                           helvetica, sans-serif;
+                                        line-height: 26px;
+                                        color: #333333;
                                         font-size: 26px;
-                                        font-style: normal;
-                                        font-weight: bold;
-                                        color: #333333;
                                       "
                                     >
-                                      Password reset&nbsp;
-                                    </h2>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td
-                                    align="left"
-                                    style="padding: 0; margin: 0"
-                                  >
-                                    <p
-                                      style="
-                                        margin: 0;
-                                        -webkit-text-size-adjust: none;
-                                        -ms-text-size-adjust: none;
-                                        mso-line-height-rule: exactly;
-                                        font-family: arial, 'helvetica neue',
-                                          helvetica, sans-serif;
-                                        line-height: 21px;
-                                        color: #333333;
-                                        font-size: 14px;
-                                      "
-                                    >
-                                      Dear ${name},
-                                    </p>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td
-                                    align="left"
-                                    style="
-                                      padding: 0;
-                                      margin: 0;
-                                      padding-top: 10px;
-                                    "
-                                  >
-                                    <p
-                                      style="
-                                        margin: 0;
-                                        -webkit-text-size-adjust: none;
-                                        -ms-text-size-adjust: none;
-                                        mso-line-height-rule: exactly;
-                                        font-family: arial, 'helvetica neue',
-                                          helvetica, sans-serif;
-                                        line-height: 21px;
-                                        color: #333333;
-                                        font-size: 14px;
-                                      "
-                                    >
-                                      Your password was resetted
-                                      successfully!<br />
-                                    </p>
-                                    <p
-                                      style="
-                                        margin: 0;
-                                        -webkit-text-size-adjust: none;
-                                        -ms-text-size-adjust: none;
-                                        mso-line-height-rule: exactly;
-                                        font-family: arial, 'helvetica neue',
-                                          helvetica, sans-serif;
-                                        line-height: 21px;
-                                        color: #333333;
-                                        font-size: 14px;
-                                      "
-                                    >
-                                      If you didn't make this action, feel free
-                                      to reach out to us.<br />
-                                    </p>
-                                    <p
-                                      style="
-                                        margin: 0;
-                                        -webkit-text-size-adjust: none;
-                                        -ms-text-size-adjust: none;
-                                        mso-line-height-rule: exactly;
-                                        font-family: arial, 'helvetica neue',
-                                          helvetica, sans-serif;
-                                        line-height: 21px;
-                                        color: #333333;
-                                        font-size: 14px;
-                                      "
-                                    >
-                                      &gt;Best regards, Wash With Kings Team.
+                                      ${title}
                                     </p>
                                   </td>
                                 </tr>
@@ -859,17 +743,179 @@ const passwordResetTemplate = (name) => {
                       <td
                         align="left"
                         style="
-                          padding: 0;
                           margin: 0;
+                          padding-top: 10px;
                           padding-bottom: 20px;
                           padding-left: 20px;
                           padding-right: 20px;
                         "
                       >
+                        <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr>
+<td style="width:60px" valign="top"><![endif]-->
                         <table
-                          cellpadding="0"
+                          class="es-left"
                           cellspacing="0"
+                          cellpadding="0"
+                          align="left"
+                          role="none"
+                          style="
+                            mso-table-lspace: 0pt;
+                            mso-table-rspace: 0pt;
+                            border-collapse: collapse;
+                            border-spacing: 0px;
+                            float: left;
+                          "
+                        >
+                          <tr>
+                            <td
+                              class="es-m-p20b"
+                              align="left"
+                              style="padding: 0; margin: 0; width: 60px"
+                            >
+                              <table
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                role="presentation"
+                                style="
+                                  mso-table-lspace: 0pt;
+                                  mso-table-rspace: 0pt;
+                                  border-collapse: collapse;
+                                  border-spacing: 0px;
+                                "
+                              >
+                                <tr>
+                                  <td
+                                    class="es-m-txt-c"
+                                    style="
+                                      padding: 0;
+                                      margin: 0;
+                                      font-size: 0px;
+                                    "
+                                    align="center"
+                                  >
+                                    <a
+                                      target="_blank"
+                                      href="https://viewstripo.email"
+                                      style="
+                                        -webkit-text-size-adjust: none;
+                                        -ms-text-size-adjust: none;
+                                        mso-line-height-rule: exactly;
+                                        text-decoration: underline;
+                                        color: #5c68e2;
+                                        font-size: 14px;
+                                      "
+                                      ><img
+                                        src="https://fhdnyng.stripocdn.email/content/guids/CABINET_709144b816b8f4ca28b511223aa17e51257958dd19b9f49b37585c5c0eeaade5/images/avatartwo.png"
+                                        alt
+                                        style="
+                                          display: block;
+                                          border: 0;
+                                          outline: none;
+                                          text-decoration: none;
+                                          -ms-interpolation-mode: bicubic;
+                                        "
+                                        width="60"
+                                        height="60"
+                                    /></a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <!--[if mso]></td><td style="width:10px"></td><td style="width:490px" valign="top"><![endif]-->
+                        <table
+                          class="es-right"
+                          cellspacing="0"
+                          cellpadding="0"
+                          align="right"
+                          role="none"
+                          style="
+                            mso-table-lspace: 0pt;
+                            mso-table-rspace: 0pt;
+                            border-collapse: collapse;
+                            border-spacing: 0px;
+                            float: right;
+                          "
+                        >
+                          <tr>
+                            <td
+                              align="left"
+                              style="padding: 0; margin: 0; width: 490px"
+                            >
+                              <table
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                role="presentation"
+                                style="
+                                  mso-table-lspace: 0pt;
+                                  mso-table-rspace: 0pt;
+                                  border-collapse: collapse;
+                                  border-spacing: 0px;
+                                "
+                              >
+                                <tr>
+                                  <td
+                                    class="es-m-txt-c"
+                                    align="left"
+                                    style="padding: 0; margin: 0"
+                                  >
+                                    <h3
+                                      style="
+                                        margin: 0;
+                                        line-height: 40px;
+                                        mso-line-height-rule: exactly;
+                                        font-family: arial, 'helvetica neue',
+                                          helvetica, sans-serif;
+                                        font-size: 20px;
+                                        font-style: normal;
+                                        font-weight: bold;
+                                        color: #666666;
+                                      "
+                                    >
+                                      ${leaderName}
+                                    </h3>
+                                    <p
+                                      style="
+                                        margin: 0;
+                                        -webkit-text-size-adjust: none;
+                                        -ms-text-size-adjust: none;
+                                        mso-line-height-rule: exactly;
+                                        font-family: arial, 'helvetica neue',
+                                          helvetica, sans-serif;
+                                        line-height: 21px;
+                                        color: #666666;
+                                        font-size: 14px;
+                                      "
+                                    >
+                                      ${role} "Wash with Kings"
+                                    </p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <!--[if mso]></td></tr></table><![endif]-->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        align="left"
+                        style="
+                          padding: 0;
+                          margin: 0;
+                          padding-top: 10px;
+                          padding-left: 20px;
+                          padding-right: 20px;
+                        "
+                      >
+                        <table
                           width="100%"
+                          cellspacing="0"
+                          cellpadding="0"
                           role="none"
                           style="
                             mso-table-lspace: 0pt;
@@ -880,22 +926,21 @@ const passwordResetTemplate = (name) => {
                         >
                           <tr>
                             <td
-                              align="center"
                               valign="top"
+                              align="center"
                               style="padding: 0; margin: 0; width: 560px"
                             >
                               <table
-                                cellpadding="0"
-                                cellspacing="0"
                                 width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                role="presentation"
                                 style="
                                   mso-table-lspace: 0pt;
                                   mso-table-rspace: 0pt;
-                                  border-collapse: separate;
+                                  border-collapse: collapse;
                                   border-spacing: 0px;
-                                  border-radius: 5px;
                                 "
-                                role="presentation"
                               >
                                 <tr>
                                   <td
@@ -903,8 +948,8 @@ const passwordResetTemplate = (name) => {
                                     style="
                                       padding: 0;
                                       margin: 0;
-                                      padding-top: 20px;
-                                      padding-bottom: 20px;
+                                      padding-top: 5px;
+                                      padding-bottom: 10px;
                                     "
                                   >
                                     <p
@@ -920,11 +965,39 @@ const passwordResetTemplate = (name) => {
                                         font-size: 14px;
                                       "
                                     >
-                                      If you didn't request to reset
-                                      your&nbsp;password, please disregard this
-                                      message or contact our techincal
-                                      department.
+                                      Hello!
                                     </p>
+                                    <p
+                                      style="
+                                        margin: 0;
+                                        -webkit-text-size-adjust: none;
+                                        -ms-text-size-adjust: none;
+                                        mso-line-height-rule: exactly;
+                                        font-family: arial, 'helvetica neue',
+                                          helvetica, sans-serif;
+                                        line-height: 21px;
+                                        color: #333333;
+                                        font-size: 14px;
+                                      "
+                                    >
+                                      <br />
+                                    </p>
+                                    <p
+                                      style="
+                                        margin: 0;
+                                        -webkit-text-size-adjust: none;
+                                        -ms-text-size-adjust: none;
+                                        mso-line-height-rule: exactly;
+                                        font-family: arial, 'helvetica neue',
+                                          helvetica, sans-serif;
+                                        line-height: 21px;
+                                        color: #333333;
+                                        font-size: 14px;
+                                      "
+                                    >
+                                      ${message}
+                                    </p>
+                                   
                                   </td>
                                 </tr>
                               </table>
@@ -938,9 +1011,357 @@ const passwordResetTemplate = (name) => {
               </tr>
             </table>
             <table
-              cellpadding="0"
+              class="es-content"
               cellspacing="0"
+              cellpadding="0"
+              align="center"
+              role="none"
+              style="
+                mso-table-lspace: 0pt;
+                mso-table-rspace: 0pt;
+                border-collapse: collapse;
+                border-spacing: 0px;
+                table-layout: fixed !important;
+                width: 100%;
+              "
+            >
+              <tr>
+                <td align="center" style="padding: 0; margin: 0">
+                  <table
+                    class="es-content-body"
+                    cellspacing="0"
+                    cellpadding="0"
+                    bgcolor="#ffffff"
+                    align="center"
+                    role="none"
+                    style="
+                      mso-table-lspace: 0pt;
+                      mso-table-rspace: 0pt;
+                      border-collapse: collapse;
+                      border-spacing: 0px;
+                      background-color: #ffffff;
+                      width: 600px;
+                    "
+                  >
+                    <tr>
+                      <td align="left" style="padding: 20px; margin: 0">
+                        <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:255px" valign="top"><![endif]-->
+                        <table
+                          class="es-left"
+                          cellspacing="0"
+                          cellpadding="0"
+                          align="left"
+                          role="none"
+                          style="
+                            mso-table-lspace: 0pt;
+                            mso-table-rspace: 0pt;
+                            border-collapse: collapse;
+                            border-spacing: 0px;
+                            float: left;
+                          "
+                        >
+                          <tr>
+                            <td
+                              align="left"
+                              style="padding: 0; margin: 0; width: 255px"
+                            >
+                              <table
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                role="presentation"
+                                style="
+                                  mso-table-lspace: 0pt;
+                                  mso-table-rspace: 0pt;
+                                  border-collapse: collapse;
+                                  border-spacing: 0px;
+                                "
+                              >
+                                <tr>
+                                  <td
+                                    class="es-m-txt-c"
+                                    style="
+                                      padding: 0;
+                                      margin: 0;
+                                      padding-top: 5px;
+                                      padding-bottom: 5px;
+                                      font-size: 0px;
+                                    "
+                                    align="right"
+                                  >
+                                    <img
+                                      src="https://fhdnyng.stripocdn.email/content/guids/CABINET_709144b816b8f4ca28b511223aa17e51257958dd19b9f49b37585c5c0eeaade5/images/basket.png"
+                                      alt
+                                      style="
+                                        display: block;
+                                        border: 0;
+                                        outline: none;
+                                        text-decoration: none;
+                                        -ms-interpolation-mode: bicubic;
+                                      "
+                                      width="150"
+                                      height="150"
+                                    />
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <!--[if mso]></td><td style="width:5px"></td><td style="width:300px" valign="top"><![endif]-->
+                        <table
+                          class="es-right"
+                          cellspacing="0"
+                          cellpadding="0"
+                          align="right"
+                          role="none"
+                          style="
+                            mso-table-lspace: 0pt;
+                            mso-table-rspace: 0pt;
+                            border-collapse: collapse;
+                            border-spacing: 0px;
+                            float: right;
+                          "
+                        >
+                          <tr>
+                            <td
+                              align="left"
+                              style="padding: 0; margin: 0; width: 300px"
+                            >
+                              <table
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                role="presentation"
+                                style="
+                                  mso-table-lspace: 0pt;
+                                  mso-table-rspace: 0pt;
+                                  border-collapse: collapse;
+                                  border-spacing: 0px;
+                                "
+                              >
+                                <tr>
+                                  <td
+                                    class="es-m-txt-c"
+                                    align="left"
+                                    style="
+                                      padding: 0;
+                                      margin: 0;
+                                      padding-left: 20px;
+                                      padding-right: 20px;
+                                    "
+                                  >
+                                    <h3
+                                      style="
+                                        margin: 0;
+                                        line-height: 40px;
+                                        mso-line-height-rule: exactly;
+                                        font-family: arial, 'helvetica neue',
+                                          helvetica, sans-serif;
+                                        font-size: 20px;
+                                        font-style: normal;
+                                        font-weight: bold;
+                                        color: #333333;
+                                      "
+                                    >
+                                      ${leaderName}
+                                    </h3>
+                                    <p
+                                      style="
+                                        margin: 0;
+                                        -webkit-text-size-adjust: none;
+                                        -ms-text-size-adjust: none;
+                                        mso-line-height-rule: exactly;
+                                        font-family: arial, 'helvetica neue',
+                                          helvetica, sans-serif;
+                                        line-height: 21px;
+                                        color: #333333;
+                                        font-size: 14px;
+                                      "
+                                    >
+                                      ${role} "Wash with Kings"
+                                    </p>
+                                    <p
+                                      style="
+                                        margin: 0;
+                                        -webkit-text-size-adjust: none;
+                                        -ms-text-size-adjust: none;
+                                        mso-line-height-rule: exactly;
+                                        font-family: arial, 'helvetica neue',
+                                          helvetica, sans-serif;
+                                        line-height: 21px;
+                                        color: #333333;
+                                        font-size: 14px;
+                                      "
+                                    >
+                                      <br />
+                                    </p>
+                                    <a
+                                      href="tel:+2348182906741"
+                                      style="
+                                        -webkit-text-size-adjust: none;
+                                        -ms-text-size-adjust: none;
+                                        mso-line-height-rule: exactly;
+                                        text-decoration: underline;
+                                        color: #5c68e2;
+                                        font-size: 14px;
+                                      "
+                                      >08182906741</a
+                                    >
+                                    <p
+                                      style="
+                                        margin: 0;
+                                        -webkit-text-size-adjust: none;
+                                        -ms-text-size-adjust: none;
+                                        mso-line-height-rule: exactly;
+                                        font-family: arial, 'helvetica neue',
+                                          helvetica, sans-serif;
+                                        line-height: 21px;
+                                        color: #333333;
+                                        font-size: 14px;
+                                      "
+                                    >
+                                      <a
+                                        target="_blank"
+                                        href="mailto:aaronparker@email.com"
+                                        style="
+                                          -webkit-text-size-adjust: none;
+                                          -ms-text-size-adjust: none;
+                                          mso-line-height-rule: exactly;
+                                          text-decoration: underline;
+                                          color: #333333;
+                                          font-size: 14px;
+                                          line-height: 21px;
+                                        "
+                                      ></a
+                                      >washwithkingsdrycleaningservice@gmail.com<a
+                                        target="_blank"
+                                        href="mailto:aaronparker@email.com"
+                                        style="
+                                          -webkit-text-size-adjust: none;
+                                          -ms-text-size-adjust: none;
+                                          mso-line-height-rule: exactly;
+                                          text-decoration: underline;
+                                          color: #333333;
+                                          font-size: 14px;
+                                          line-height: 21px;
+                                        "
+                                      ></a
+                                      ><br />
+                                    </p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    class="es-m-txt-c"
+                                    style="
+                                      margin: 0;
+                                      padding-top: 5px;
+                                      padding-bottom: 5px;
+                                      padding-left: 20px;
+                                      padding-right: 20px;
+                                      font-size: 0;
+                                    "
+                                    align="left"
+                                  >
+                                    <table
+                                      class="es-table-not-adapt es-social"
+                                      cellspacing="0"
+                                      cellpadding="0"
+                                      role="presentation"
+                                      style="
+                                        mso-table-lspace: 0pt;
+                                        mso-table-rspace: 0pt;
+                                        border-collapse: collapse;
+                                        border-spacing: 0px;
+                                      "
+                                    >
+                                      <tr>
+                                        <td
+                                          valign="top"
+                                          align="center"
+                                          style="
+                                            padding: 0;
+                                            margin: 0;
+                                            padding-right: 10px;
+                                          "
+                                        >
+                                          <a
+                                            target="_blank"
+                                            href="https://www.instagram.com/washwithkings?igsh=bjNxb3p1bTIxcTVq&utm_source=qr"
+                                            style="
+                                              -webkit-text-size-adjust: none;
+                                              -ms-text-size-adjust: none;
+                                              mso-line-height-rule: exactly;
+                                              text-decoration: underline;
+                                              color: #5c68e2;
+                                              font-size: 14px;
+                                            "
+                                            ><img
+                                              title="Instagram"
+                                              src="https://fhdnyng.stripocdn.email/content/assets/img/social-icons/logo-black/instagram-logo-black.png"
+                                              alt="Inst"
+                                              width="24"
+                                              height="24"
+                                              style="
+                                                display: block;
+                                                border: 0;
+                                                outline: none;
+                                                text-decoration: none;
+                                                -ms-interpolation-mode: bicubic;
+                                              "
+                                          /></a>
+                                        </td>
+                                        <td
+                                          valign="top"
+                                          align="center"
+                                          style="padding: 0; margin: 0"
+                                        >
+                                          <a
+                                            target="_blank"
+                                            href="https://wa.me/qr/X3TDAWMNGNZ7L1"
+                                            style="
+                                              -webkit-text-size-adjust: none;
+                                              -ms-text-size-adjust: none;
+                                              mso-line-height-rule: exactly;
+                                              text-decoration: underline;
+                                              color: #5c68e2;
+                                              font-size: 14px;
+                                            "
+                                            ><img
+                                              title="Whatsapp"
+                                              src="https://fhdnyng.stripocdn.email/content/assets/img/messenger-icons/logo-black/whatsapp-logo-black.png"
+                                              alt="Whatsapp"
+                                              width="24"
+                                              height="24"
+                                              style="
+                                                display: block;
+                                                border: 0;
+                                                outline: none;
+                                                text-decoration: none;
+                                                -ms-interpolation-mode: bicubic;
+                                              "
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <!--[if mso]></td></tr></table><![endif]-->
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <table
               class="es-footer"
+              cellspacing="0"
+              cellpadding="0"
               align="center"
               role="none"
               style="
@@ -959,9 +1380,6 @@ const passwordResetTemplate = (name) => {
                 <td align="center" style="padding: 0; margin: 0">
                   <table
                     class="es-footer-body"
-                    align="center"
-                    cellpadding="0"
-                    cellspacing="0"
                     style="
                       mso-table-lspace: 0pt;
                       mso-table-rspace: 0pt;
@@ -970,6 +1388,9 @@ const passwordResetTemplate = (name) => {
                       background-color: transparent;
                       width: 600px;
                     "
+                    cellspacing="0"
+                    cellpadding="0"
+                    align="center"
                     role="none"
                   >
                     <tr>
@@ -977,16 +1398,16 @@ const passwordResetTemplate = (name) => {
                         align="left"
                         style="
                           margin: 0;
-                          padding-top: 20px;
                           padding-bottom: 20px;
                           padding-left: 20px;
                           padding-right: 20px;
+                          padding-top: 30px;
                         "
                       >
                         <table
-                          cellpadding="0"
-                          cellspacing="0"
                           width="100%"
+                          cellspacing="0"
+                          cellpadding="0"
                           role="none"
                           style="
                             mso-table-lspace: 0pt;
@@ -1001,9 +1422,9 @@ const passwordResetTemplate = (name) => {
                               style="padding: 0; margin: 0; width: 560px"
                             >
                               <table
-                                cellpadding="0"
-                                cellspacing="0"
                                 width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
                                 role="presentation"
                                 style="
                                   mso-table-lspace: 0pt;
@@ -1012,100 +1433,6 @@ const passwordResetTemplate = (name) => {
                                   border-spacing: 0px;
                                 "
                               >
-                                <tr>
-                                  <td
-                                    align="center"
-                                    style="
-                                      padding: 0;
-                                      margin: 0;
-                                      padding-top: 15px;
-                                      padding-bottom: 15px;
-                                      font-size: 0;
-                                    "
-                                  >
-                                    <table
-                                      cellpadding="0"
-                                      cellspacing="0"
-                                      class="es-table-not-adapt es-social"
-                                      role="presentation"
-                                      style="
-                                        mso-table-lspace: 0pt;
-                                        mso-table-rspace: 0pt;
-                                        border-collapse: collapse;
-                                        border-spacing: 0px;
-                                      "
-                                    >
-                                      <tr>
-                                        <td
-                                          align="center"
-                                          valign="top"
-                                          style="
-                                            padding: 0;
-                                            margin: 0;
-                                            padding-right: 40px;
-                                          "
-                                        >
-                                          <a
-                                            target="_blank"
-                                            href="https://www.instagram.com/washwithkings?igsh=bjNxb3p1bTIxcTVq&utm_source=qr"
-                                            style="
-                                              -webkit-text-size-adjust: none;
-                                              -ms-text-size-adjust: none;
-                                              mso-line-height-rule: exactly;
-                                              text-decoration: underline;
-                                              color: #333333;
-                                              font-size: 12px;
-                                            "
-                                            ><img
-                                              title="Instagram"
-                                              src="https://fhdnyng.stripocdn.email/content/assets/img/social-icons/logo-black/instagram-logo-black.png"
-                                              alt="Inst"
-                                              width="32"
-                                              height="32"
-                                              style="
-                                                display: block;
-                                                border: 0;
-                                                outline: none;
-                                                text-decoration: none;
-                                                -ms-interpolation-mode: bicubic;
-                                              "
-                                          /></a>
-                                        </td>
-                                        <td
-                                          align="center"
-                                          valign="top"
-                                          style="padding: 0; margin: 0"
-                                        >
-                                          <a
-                                            target="_blank"
-                                            href="https://wa.me/qr/X3TDAWMNGNZ7L1"
-                                            style="
-                                              -webkit-text-size-adjust: none;
-                                              -ms-text-size-adjust: none;
-                                              mso-line-height-rule: exactly;
-                                              text-decoration: underline;
-                                              color: #333333;
-                                              font-size: 12px;
-                                            "
-                                            ><img
-                                              title="Whatsapp"
-                                              src="https://fhdnyng.stripocdn.email/content/assets/img/messenger-icons/logo-black/whatsapp-logo-black.png"
-                                              alt="Whatsapp"
-                                              width="32"
-                                              height="32"
-                                              style="
-                                                display: block;
-                                                border: 0;
-                                                outline: none;
-                                                text-decoration: none;
-                                                -ms-interpolation-mode: bicubic;
-                                              "
-                                          /></a>
-                                        </td>
-                                      </tr>
-                                    </table>
-                                  </td>
-                                </tr>
                                 <tr>
                                   <td
                                     align="center"
@@ -1149,6 +1476,57 @@ const passwordResetTemplate = (name) => {
                                     </p>
                                   </td>
                                 </tr>
+                                <tr>
+                                  <td style="padding: 0; margin: 0">
+                                    <table
+                                      class="es-menu"
+                                      width="100%"
+                                      cellspacing="0"
+                                      cellpadding="0"
+                                      role="presentation"
+                                      style="
+                                        mso-table-lspace: 0pt;
+                                        mso-table-rspace: 0pt;
+                                        border-collapse: collapse;
+                                        border-spacing: 0px;
+                                      "
+                                    >
+                                      <tr class="links">
+                                        <td
+                                          style="
+                                            margin: 0;
+                                            padding-left: 5px;
+                                            padding-right: 5px;
+                                            padding-top: 5px;
+                                            padding-bottom: 5px;
+                                            border: 0;
+                                          "
+                                          width="100%"
+                                          valign="top"
+                                          align="center"
+                                        >
+                                          <a
+                                            target="_blank"
+                                            href="https://wash-with-kings.vercel.app/"
+                                            style="
+                                              -webkit-text-size-adjust: none;
+                                              -ms-text-size-adjust: none;
+                                              mso-line-height-rule: exactly;
+                                              text-decoration: none;
+                                              display: block;
+                                              font-family: arial,
+                                                'helvetica neue', helvetica,
+                                                sans-serif;
+                                              color: #999999;
+                                              font-size: 12px;
+                                            "
+                                            >Visit Us
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
                               </table>
                             </td>
                           </tr>
@@ -1160,9 +1538,9 @@ const passwordResetTemplate = (name) => {
               </tr>
             </table>
             <table
-              cellpadding="0"
-              cellspacing="0"
               class="es-content"
+              cellspacing="0"
+              cellpadding="0"
               align="center"
               role="none"
               style="
@@ -1175,16 +1553,9 @@ const passwordResetTemplate = (name) => {
               "
             >
               <tr>
-                <td
-                  class="es-info-area"
-                  align="center"
-                  style="padding: 0; margin: 0"
-                >
+                <td align="center" style="padding: 0; margin: 0">
                   <table
                     class="es-content-body"
-                    align="center"
-                    cellpadding="0"
-                    cellspacing="0"
                     style="
                       mso-table-lspace: 0pt;
                       mso-table-rspace: 0pt;
@@ -1193,15 +1564,18 @@ const passwordResetTemplate = (name) => {
                       background-color: transparent;
                       width: 600px;
                     "
+                    cellspacing="0"
+                    cellpadding="0"
                     bgcolor="#FFFFFF"
+                    align="center"
                     role="none"
                   >
                     <tr>
                       <td align="left" style="padding: 20px; margin: 0">
                         <table
-                          cellpadding="0"
-                          cellspacing="0"
                           width="100%"
+                          cellspacing="0"
+                          cellpadding="0"
                           role="none"
                           style="
                             mso-table-lspace: 0pt;
@@ -1212,14 +1586,14 @@ const passwordResetTemplate = (name) => {
                         >
                           <tr>
                             <td
-                              align="center"
                               valign="top"
+                              align="center"
                               style="padding: 0; margin: 0; width: 560px"
                             >
                               <table
-                                cellpadding="0"
-                                cellspacing="0"
                                 width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
                                 role="presentation"
                                 style="
                                   mso-table-lspace: 0pt;
@@ -1230,8 +1604,8 @@ const passwordResetTemplate = (name) => {
                               >
                                 <tr>
                                   <td
-                                    align="center"
                                     class="es-infoblock"
+                                    align="center"
                                     style="
                                       padding: 0;
                                       margin: 0;
@@ -1310,12 +1684,11 @@ const passwordResetTemplate = (name) => {
   </body>
 </html>
 
-  `;
-
+    `;
   return html;
 };
 
 module.exports = {
-  passwordResetTemplate,
+  broadcastTemplate,
 };
 

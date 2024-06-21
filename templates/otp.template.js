@@ -9,7 +9,7 @@ const otpEmailTemplate = (otp) => {
             font-family: Arial, sans-serif;
         }
         .header {
-            background-color: #E1510F;
+            background-color: #FDE198;
             padding: 20px;
             text-align: center;
         }
@@ -17,7 +17,7 @@ const otpEmailTemplate = (otp) => {
             padding: 20px;
         }
         .footer {
-            background-color: #E1510F;
+            background-color: #FDE198;
             padding: 10px;
             text-align: center;
         }
