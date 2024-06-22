@@ -6,6 +6,7 @@ const { Notification } = require('../../models/Notification');
 const { Owner } = require('../../models/Owner');
 const { Admin } = require('../../models/Admin');
 const { default: mongoose } = require('mongoose');
+const { sendMail } = require('../../core/emailService');
 
 exports.getAllPickups = async (req, res) => {
   let pickups;
@@ -191,6 +192,13 @@ exports.addPickup = async (req, res, next) => {
     });
 
     await newNotification.save();
+
+    const emailData = {
+      fullName,
+      orderNumber,
+    };
+
+    await sendMail('Pickup Order', email, 'pickup', emailData);
 
     return res.status(200).json({
       statusCode: 200,

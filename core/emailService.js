@@ -7,6 +7,7 @@ const { broadcastTemplate } = require('../templates/broadcast.template');
 const {
   passwordResetTemplate,
 } = require('../templates/passwordReset.template');
+const { pickupEmailTemplate } = require('../templates/pickup.template');
 
 // For Gmail
 const options = {
@@ -37,6 +38,9 @@ const sendMail = async (subject, email, type, data) => {
   if (type === 'otp') {
     html = otpEmailTemplate(`${data.emailOtp}`);
   }
+  if (type === 'pickup') {
+    html = pickupEmailTemplate(`${data.fullName}`, `${data.orderNumber}`);
+  }
   if (type === 'password-reset') {
     html = passwordResetTemplate(`${data.userName}`);
   }
@@ -45,15 +49,17 @@ const sendMail = async (subject, email, type, data) => {
     [type === 'broadcast' ? 'bcc' : 'to']: `${email}`,
     subject: subject,
     html: html,
-    attachments: [
-      type === 'broadcast' && data.image
-        ? {
-            filename: 'image.png',
-            content: data.image.split('base64,')[1],
-            encoding: 'base64',
-          }
-        : '',
-    ],
+    ...(type === 'broadcast' && data.image
+      ? {
+          attachments: [
+            {
+              filename: 'image.png',
+              content: data.image.split('base64,')[1],
+              encoding: 'base64',
+            },
+          ],
+        }
+      : {}),
   };
 
   try {
