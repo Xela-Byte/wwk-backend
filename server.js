@@ -15,7 +15,8 @@ const router = express.Router();
 const server = http.createServer(app);
 
 // const frontURL = 'http://localhost:3000';
-const frontURL = 'https://wash-with-kings.vercel.app';
+// const frontURL = 'https://wash-with-kings.vercel.app';
+const frontURL = 'https://www.washwithkings.com';
 
 const io = new Server(server, {
   cors: {
