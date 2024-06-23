@@ -11,10 +11,12 @@ const { pickupEmailTemplate } = require('../templates/pickup.template');
 
 // For Gmail
 const options = {
-  service: 'gmail',
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
+  secure: true, // true for 465, false for other ports
   auth: {
-    user: process.env.EMAIL_USERNAME,
-    pass: process.env.EMAIL_PASS,
+    user: process.env.MAIL_USERNAME, // your Zoho email address
+    pass: process.env.MAIL_PASSWORD, // your Zoho email password
   },
 };
 
@@ -45,7 +47,7 @@ const sendMail = async (subject, email, type, data) => {
     html = passwordResetTemplate(`${data.userName}`);
   }
   const mailOptions = {
-    from: `Wash With Kings ${process.env.EMAIL_USERNAME}`,
+    from: `${process.env.MAIL_FROM_NAME} <${process.env.MAIL_FROM_ADDRESS}>`,
     [type === 'broadcast' ? 'bcc' : 'to']: `${email}`,
     subject: subject,
     html: html,
