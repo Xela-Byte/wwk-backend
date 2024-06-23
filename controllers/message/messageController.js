@@ -228,7 +228,9 @@ exports.sendBroadcastMessage = async (req, res, next) => {
       };
 
       // (subject: any, email: any, type: any, data: any):
-      await sendMail(title, recipientsData, 'broadcast', emailData);
+      await sendMail(title, recipientsData, 'broadcast', emailData).then(() => {
+        console.log('Broadcast message sent');
+      });
 
       return res.status(200).json({
         statusCode: 200,
