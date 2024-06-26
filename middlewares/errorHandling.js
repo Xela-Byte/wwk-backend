@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 function errorProcessing(receivedErrorMessage) {
+  console.log(receivedErrorMessage);
   // split the error response
   let errorMessage = receivedErrorMessage.message.split(':');
   errorMessage = errorMessage[1].split('|');

@@ -1,4 +1,4 @@
-const broadcastTemplate = (title, leaderName, role, message, link, image) => {
+const broadcastTemplate = (title, leaderName, role, message) => {
   const html = `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" lang="en">
@@ -1090,7 +1090,7 @@ const broadcastTemplate = (title, leaderName, role, message, link, image) => {
                                     align="right"
                                   >
                                     <img
-                                      src="https://fhdnyng.stripocdn.email/content/guids/CABINET_709144b816b8f4ca28b511223aa17e51257958dd19b9f49b37585c5c0eeaade5/images/basket.png"
+                                      src="https://fhdnyng.stripocdn.email/content/guids/CABINET_709144b816b8f4ca28b511223aa17e51257958dd19b9f49b37585c5c0eeaade5/images/logodesktop_zBL.png"
                                       alt
                                       style="
                                         display: block;
@@ -1507,7 +1507,7 @@ const broadcastTemplate = (title, leaderName, role, message, link, image) => {
                                         >
                                           <a
                                             target="_blank"
-                                            href="https://wash-with-kings.vercel.app/"
+                                            href="https://www.washwithkings.com/"
                                             style="
                                               -webkit-text-size-adjust: none;
                                               -ms-text-size-adjust: none;
