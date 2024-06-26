@@ -617,8 +617,8 @@ const broadcastTemplate = (title, leaderName, role, message) => {
                                         font-size: 12px;
                                       "
                                       title="Logo"
-                                      width="200"
-                                      height="156"
+                                      width="100"
+                                      height="78"
                                     />
                                   </td>
                                 </tr>
