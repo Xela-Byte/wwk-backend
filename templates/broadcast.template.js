@@ -9,27 +9,6 @@ const broadcastTemplate = (title, leaderName, role, message) => {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta content="telephone=no" name="format-detection" />
     <title>Wash with Kings</title>
-    <!--[if (mso 16)
-      ]><style type="text/css">
-        a {
-          text-decoration: none;
-        }
-      </style><!
-    [endif]-->
-    <!--[if gte mso 9
-      ]><style>
-        sup {
-          font-size: 100% !important;
-        }
-      </style><!
-    [endif]-->
-    <!--[if gte mso 9
-      ]><xml>
-        <o:OfficeDocumentSettings>
-          <o:AllowPNG></o:AllowPNG> <o:PixelsPerInch>96</o:PixelsPerInch>
-        </o:OfficeDocumentSettings>
-      </xml>
-    <![endif]-->
     <style type="text/css">
       #outlook a {
         padding: 0;
@@ -55,7 +34,13 @@ const broadcastTemplate = (title, leaderName, role, message) => {
         line-height: 0;
         mso-hide: all;
       }
+      .info-block {
+        display: flex;
+      }
       @media only screen and (max-width: 600px) {
+        .info-block {
+          flex-direction: column;
+        }
         p,
         ul li,
         ol li,
@@ -386,10 +371,6 @@ const broadcastTemplate = (title, leaderName, role, message) => {
       lang="en"
       style="background-color: #fafafa"
     >
-      <!--[if gte mso 9
-        ]><v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
-          <v:fill type="tile" color="#fafafa"></v:fill> </v:background
-      ><![endif]-->
       <table
         class="es-wrapper"
         width="100%"
@@ -501,9 +482,7 @@ const broadcastTemplate = (title, leaderName, role, message) => {
                                         color: #cccccc;
                                         font-size: 12px;
                                       "
-                                    >
-                                      
-                                    </p>
+                                    ></p>
                                   </td>
                                 </tr>
                               </table>
@@ -594,35 +573,7 @@ const broadcastTemplate = (title, leaderName, role, message) => {
                                   border-radius: 6px;
                                 "
                                 role="presentation"
-                              >
-                                <tr class="es-mobile-hidden">
-                                  <td
-                                    style="
-                                      padding: 0;
-                                      margin: 0;
-                                      padding-bottom: 20px;
-                                      font-size: 0px;
-                                    "
-                                    align="center"
-                                  >
-                                    <img
-                                      src="https://fhdnyng.stripocdn.email/content/guids/CABINET_709144b816b8f4ca28b511223aa17e51257958dd19b9f49b37585c5c0eeaade5/images/logodesktop_zBL.png"
-                                      alt="Logo"
-                                      style="
-                                        display: block;
-                                        border: 0;
-                                        outline: none;
-                                        text-decoration: none;
-                                        -ms-interpolation-mode: bicubic;
-                                        font-size: 12px;
-                                      "
-                                      title="Logo"
-                                      width="100"
-                                      height="78"
-                                    />
-                                  </td>
-                                </tr>
-                              </table>
+                              ></table>
                             </td>
                           </tr>
                         </table>
@@ -997,7 +948,6 @@ const broadcastTemplate = (title, leaderName, role, message) => {
                                     >
                                       ${message}
                                     </p>
-                                   
                                   </td>
                                 </tr>
                               </table>
@@ -1026,7 +976,7 @@ const broadcastTemplate = (title, leaderName, role, message) => {
               "
             >
               <tr>
-                <td align="center" style="padding: 0; margin: 0">
+                <td style="padding: 0; margin: 0">
                   <table
                     class="es-content-body"
                     cellspacing="0"
@@ -1044,27 +994,21 @@ const broadcastTemplate = (title, leaderName, role, message) => {
                     "
                   >
                     <tr>
-                      <td align="left" style="padding: 20px; margin: 0">
+                      <td class="info-block" style="padding: 20px; margin: 0">
                         <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:255px" valign="top"><![endif]-->
                         <table
-                          class="es-left"
                           cellspacing="0"
                           cellpadding="0"
-                          align="left"
                           role="none"
                           style="
                             mso-table-lspace: 0pt;
                             mso-table-rspace: 0pt;
                             border-collapse: collapse;
                             border-spacing: 0px;
-                            float: left;
                           "
                         >
                           <tr>
-                            <td
-                              align="left"
-                              style="padding: 0; margin: 0; width: 255px"
-                            >
+                            <td style="padding: 0; margin: 0; width: 100px">
                               <table
                                 width="100%"
                                 cellspacing="0"
@@ -1087,7 +1031,6 @@ const broadcastTemplate = (title, leaderName, role, message) => {
                                       padding-bottom: 5px;
                                       font-size: 0px;
                                     "
-                                    align="right"
                                   >
                                     <img
                                       src="https://fhdnyng.stripocdn.email/content/guids/CABINET_709144b816b8f4ca28b511223aa17e51257958dd19b9f49b37585c5c0eeaade5/images/logodesktop_zBL.png"
@@ -1098,9 +1041,11 @@ const broadcastTemplate = (title, leaderName, role, message) => {
                                         outline: none;
                                         text-decoration: none;
                                         -ms-interpolation-mode: bicubic;
+                                        border-radius: 50%;
+                                        object-fit: cover;
                                       "
-                                      width="150"
-                                      height="150"
+                                      width="80"
+                                      height="80"
                                     />
                                   </td>
                                 </tr>
@@ -1108,26 +1053,19 @@ const broadcastTemplate = (title, leaderName, role, message) => {
                             </td>
                           </tr>
                         </table>
-                        <!--[if mso]></td><td style="width:5px"></td><td style="width:300px" valign="top"><![endif]-->
                         <table
-                          class="es-right"
                           cellspacing="0"
                           cellpadding="0"
-                          align="right"
                           role="none"
                           style="
                             mso-table-lspace: 0pt;
                             mso-table-rspace: 0pt;
                             border-collapse: collapse;
                             border-spacing: 0px;
-                            float: right;
                           "
                         >
                           <tr>
-                            <td
-                              align="left"
-                              style="padding: 0; margin: 0; width: 300px"
-                            >
+                            <td style="padding: 0; margin: 0; width: 300px">
                               <table
                                 width="100%"
                                 cellspacing="0"
@@ -1143,7 +1081,6 @@ const broadcastTemplate = (title, leaderName, role, message) => {
                                 <tr>
                                   <td
                                     class="es-m-txt-c"
-                                    align="left"
                                     style="
                                       padding: 0;
                                       margin: 0;
@@ -1683,6 +1620,7 @@ const broadcastTemplate = (title, leaderName, role, message) => {
     </div>
   </body>
 </html>
+
 
     `;
   return html;
