@@ -48,7 +48,7 @@ exports.getAllPickups = async (req, res) => {
     // Get the total number of customers with the specified status and search criteria
     const totalFilteredPickups = await Pickup.countDocuments(filterCriteria);
 
-    const totalPickups = await Pickup.countDocuments();
+    const totalPickups = await Pickup.countDocuments({ status: pickupStatus });
 
     // Calculate the number of customers to skip
     const skip = (page - 1) * limit;

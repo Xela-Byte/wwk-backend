@@ -44,7 +44,9 @@ exports.getAllCustomers = async (req, res) => {
     const totalFilteredCustomers =
       await Customer.countDocuments(filterCriteria);
 
-    const totalCustomers = await Customer.countDocuments();
+    const totalCustomers = await Customer.countDocuments({
+      status: customerStatus,
+    });
 
     // Calculate the number of customers to skip
     const skip = (page - 1) * limit;
